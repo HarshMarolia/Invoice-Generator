@@ -4,6 +4,34 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const [name, setName] = useState('Customer');
+  // container function to generate the Invoice
+  const generateInvoice = e => {
+    e.preventDefault();
+    // send a post request with the name to our API endpoint
+    const fetchData = async () => {
+      const currentURL = window.location.href;
+      const url = new URL(currentURL);
+      const domainHost = url.origin;
+      const data = await fetch(`${domainHost}/api/generate-invoice`, {
+        method: 'POST',
+        body: JSON.stringify({ name }),
+      });
+      // convert the response into an array Buffer
+      return data.arrayBuffer();
+    };
+
+    // convert the buffer into an object URL
+    const saveAsPDF = async () => {
+      const buffer = await fetchData();
+      const blob = new Blob([buffer]);
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'invoice.pdf';
+      link.click();
+    };
+
+    saveAsPDF();
+  };
 
   return (
     <div className={styles.container}>
@@ -30,7 +58,7 @@ export default function Home() {
             />
           </div>
 
-          <button className={styles.button}>Download Invoice</button>
+          <button onClick={generateInvoice} className={styles.button}>Download Invoice</button>
         </form>
       </main>
     </div>
