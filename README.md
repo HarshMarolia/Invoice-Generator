@@ -2,6 +2,9 @@
 
 A simple and customizable invoice generator for managing your billing needs efficiently. Say goodbye to tedious paperwork and welcome a seamless invoicing experience.
 
+## Demo
+You can try the Text Utility App by visiting the [Demo](https://harshmarolia.github.io/Invoice-Generator/) page 🚀.
+
 ## Key Features
 
 - Generate professional invoices with ease.
