@@ -76,8 +76,8 @@
       font-weight: bold;
     }
 
-    .thanksgiving{
-      margin: 10px 0;
+    .thanksgiving {
+      margin-top: 30px;
     }
 
     @media only screen and (max-width: 600px) {
@@ -127,9 +127,9 @@
               </td>
 
               <td>
-                Invoice #: 4565<br>
-                Created: September 22, 2023<br>
-                Due: September 30, 2023
+                <b>Invoice #: {{data.invoiceNumber}}</b><br>
+                Date Issued: {{data.invoiceCreated}}<br>
+                Due Date: {{data.invoiceDue}}
               </td>
             </tr>
           </table>
@@ -141,15 +141,16 @@
           <table>
             <tr>
               <td>
-                Nikhil Mishra<br>
-                +91 7878489267<br>
-                nikhilm0311@gmail.com
+                {{data.yourName}}<br>
+                {{data.yourNumber}}<br>
+                {{data.yourEmail}}
               </td>
 
               <td>
-                Bhoomi AI<br>
-                {{customerName}}<br>
-                example@example.com
+                <span><b>Issued To</b></span><br>
+                {{data.companyName}}<br>
+                {{data.customerName}}<br>
+                {{data.companyEmail}}
               </td>
             </tr>
           </table>
@@ -165,72 +166,26 @@
           Price
         </td>
       </tr>
-
+    </table>
+    <table cellpadding="0" cellspacing="0">
+      {{#each data.items}}
       <tr class="item">
         <td>
-          A new website from scratch on the latest technology.
+          {{@key}}
         </td>
 
         <td>
-          ₹ 13,500
+        ₹  ${{this}}
         </td>
       </tr>
-
-      <tr class="item">
-        <td>
-          SPA for speed optimization.
-        </td>
-
-        <td>
-          ₹ 1,000
-        </td>
-      </tr>
-
-      <tr class="item">
-        <td>
-          Functional form section, to get photos over mail.
-        </td>
-
-        <td>
-          ₹ 1,500
-        </td>
-      </tr>
-
-      <tr class="item">
-        <td>
-          Bilingual functionality
-        </td>
-
-        <td>
-          ₹ 1,000
-        </td>
-      </tr>
-
-      <tr class="item">
-        <td>
-          2 Plugins/extensions installation
-        </td>
-
-        <td>
-          ₹ 0
-        </td>
-      </tr>
-
-      <tr class="item last">
-        <td>
-          2 revisions and upto 5 pages in a product
-        </td>
-
-        <td>
-          ₹ 0
-        </td>
-      </tr>
-
+      {{/each}}
+    </table>
+    <table cellpadding="0" cellspacing="0">
       <tr class="total">
         <td></td>
 
         <td>
-          Total: ₹ 17,000
+          Total: ₹ {{data.totalPrice}}
         </td>
       </tr>
 
@@ -243,59 +198,61 @@
           Bank Transfer
         </td>
       </tr>
-      
+
       <tr class="item">
         <td>
           Payee Name
         </td>
 
         <td>
-          Nikhil Mishra
+          {{data.yourName}}
         </td>
       </tr>
-      
+
       <tr class="item">
         <td>
           Bank Name
         </td>
 
         <td>
-          xyz bank
+          {{data.bankName}}
         </td>
       </tr>
-      
+
       <tr class="item">
         <td>
           Account Type
         </td>
 
         <td>
-          SB A/c 
+          {{data.accountType}}
         </td>
       </tr>
-      
+
       <tr class="item">
         <td>
           Account Number
         </td>
 
         <td>
-          65465465464654
+          {{data.accountNumber}}
         </td>
       </tr>
-      
+
       <tr class="item">
         <td>
-          Bank IFS Code
+          Bank IFSC Code
         </td>
 
         <td>
-          6546546564
+          {{data.bankIfsc}}
         </td>
       </tr>
     </table>
     <p class="thanksgiving">
-      <b>Thank you for entrusting me with your project. I look forward to continuing our collaboration.</b>
+      <b>Thank you for entrusting me with your project. I look forward to continuing our collaboration.</b><br>
+    <h1>Note</h1>
+    <b>Please Pay Invoice by <u>{{data.invoiceDue}}</u></b>
     </p>
   </div>
 </body>
