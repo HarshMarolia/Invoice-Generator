@@ -44,6 +44,7 @@
 
 .form {
   padding: 2% 10%;
+  width: 50%;
   background: rgba(255, 255, 255, 0.41);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -69,4 +70,28 @@
   font-weight: bold;
   font-size: 15px;
   color: rgb(233, 231, 231);
+}
+
+.button1 {
+  padding: 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  background-color: dodgerblue;
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(233, 231, 231);
+}
+
+.flexibox{
+  display: flex;
+  flex-direction: column;
+}
+
+.flexiboxchild{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-around;
 }
