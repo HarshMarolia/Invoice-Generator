@@ -127,7 +127,7 @@
               </td>
 
               <td>
-                <b>Invoice #: {{data.invoiceNumber}}</b><br>
+                <b>Invoice #{{data.invoiceNumber}}</b><br>
                 Date Issued: {{data.invoiceCreated}}<br>
                 Due Date: {{data.invoiceDue}}
               </td>
@@ -142,7 +142,7 @@
             <tr>
               <td>
                 {{data.yourName}}<br>
-                {{data.yourNumber}}<br>
+                +91 {{data.yourNumber}}<br>
                 {{data.yourEmail}}
               </td>
 
@@ -175,7 +175,7 @@
         </td>
 
         <td>
-        ₹  ${{this}}
+        ₹ {{this}}
         </td>
       </tr>
       {{/each}}
