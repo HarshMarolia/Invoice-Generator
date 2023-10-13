@@ -173,7 +173,7 @@ export default function Home() {
             <label htmlFor='invoiceCreated'>Invoice Created</label>
             <input
               id='invoiceCreated'
-              type='date'
+              type='text'
               name='invoiceCreated'
               value={data.invoiceCreated}
               onChange={onChangeHandler}
@@ -183,7 +183,7 @@ export default function Home() {
             <label htmlFor='invoiceDue'>Invoice Due</label>
             <input
               id='invoiceDue'
-              type='date'
+              type='text'
               name='invoiceDue'
               value={data.invoiceDue}
               onChange={onChangeHandler}

@@ -80,6 +80,11 @@
       margin-top: 30px;
     }
 
+    .digital{
+      font-size: 10px; 
+      text-align: center;
+    }
+
     @media only screen and (max-width: 600px) {
       .invoice-box table tr.top table td {
         width: 100%;
@@ -250,10 +255,12 @@
       </tr>
     </table>
     <p class="thanksgiving">
-      <b>Thank you for entrusting me with your project. I look forward to continuing our collaboration.</b><br>
+      <b>Thank you for entrusting us with your project. We look forward to continuing our collaboration.</b><br>
     <h1>Note</h1>
-    <b>Please Pay Invoice by <u>{{data.invoiceDue}}</u></b>
+    <b>Please Pay Invoice by <u>{{data.invoiceDue}}</u>.</b>
     </p>
+    <hr>
+    <p class="digital">This Invoice was generated electronically, hence does not require a signature.</p>
   </div>
 </body>
 
