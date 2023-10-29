@@ -1,17 +1,83 @@
-.container {
-  min-height: 100vh;
-  padding: 3rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.mylogo {
+  position: absolute;
+  top: 0.25rem;
+  left: 2.5rem;
+  width: 8rem;
+}
+
+.myheader {
+  width: 100%;
+  height: 10rem;
+  z-index: -10;
+  position: absolute;
+}
+
+.shopowner {
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  display: block;
 }
 
 .main {
-  /* padding: 1rem 0; */
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1;
+  font-size: 4rem;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.25rem;
+  color: gray;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.form {
+  padding: 2% 7%;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.sections{
+  display: flex;
+  align-items: center;
+}
+
+.field{
+  flex: 1;
+  margin: 2%;
+}
+
+.field input {
+  display: block;
+  padding: 0.5em 5px;
+  border: black solid 1px;
+  margin: 10px 0;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.field label {
+  font-size: large;
+  font-weight: 500;
 }
 
 .title a {
@@ -25,68 +91,13 @@
   text-decoration: underline;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-  color: aliceblue;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.form {
-  padding: 2% 7%;
-  width: 70%;
-  background: rgba(255, 255, 255, 0.41);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.field input {
-  display: block;
-  padding: 0.5em 5px;
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-.field input:focus {
-  outline: none;
-}
-
-.field label{
-  font-size: large;
-  font-weight: 500;
-}
-
 .button {
   padding: 1em;
+  margin: auto;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  width: 100%;
-  background-color: dodgerblue;
-  font-weight: bold;
-  font-size: 15px;
-  color: rgb(233, 231, 231);
-}
-
-.button1 {
-  padding: 1em;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  width: 30%;
+  width: 40%;
   background-color: dodgerblue;
   font-weight: bold;
   font-size: 15px;
@@ -105,21 +116,18 @@
   color: rgb(233, 231, 231);
 }
 
-.inputElement {
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+.actionbuttons{
+  display: flex;
 }
 
 .inputElementTask {
+  display: block;
+  padding: 0.5em 1rem;
+  border: black solid 1px;
+  margin: 10px 0;
+  font-size: 20px;
   width: 100%;
-  margin-bottom: 10px;
-  border: none;
   border-radius: 5px;
-  font-size: 16px;
 }
 
 .flexibox {
@@ -129,8 +137,39 @@
 
 .flexiboxchild {
   display: flex;
-  flex-direction: row;
   align-items: center;
   align-content: space-around;
+  padding: 1% 0;
   gap: 0.5rem;
+}
+
+@media (max-width: 540px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    padding: 0 5%;
+  }
+  .sections{
+    flex-direction: column;
+  }
+
+  .shopowner {
+    width: 90%;
+    padding-top: 10%;
+  }
+
+  .flexiboxchild {
+    flex-direction: column;
+  }
+
+  .deleteButton {
+    width: 50%;
+  }
+  .button {
+    margin-top: 4%;
+    font-size: small;
+  }
 }

@@ -63,7 +63,7 @@ export default function Home() {
   };
 
   // Dynamic form section
-  
+
   const addNewFields = (e) => {
     e.preventDefault();
     setTask([...task, { fname: "", lname: 0 }])
@@ -84,165 +84,160 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Generate Customer Invoice</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/mylogo1.png' />
       </Head>
-
+      <img src="headerbg.png" alt="header" className={styles.myheader} />
+      <img src="mylogo1.png" alt="logo" className={styles.mylogo} />
+      <img src="shopowner.png" alt="logo" className={styles.shopowner} />
       <main className={styles.main}>
-        <h1 className={styles.title}>Hello {data.yourName} 👋</h1>
-
+        <h1 className={styles.title}>Invoice Details</h1>
         <p className={styles.description}>
-          Fill the form below to generate your invoice
+          Nice to meet you! Enter your details to Generate Invoice.
         </p>
 
+        {/* Form Started */}
         <form className={styles.form}>
-          {/* Form Started */}
-          <div className={styles.field}>
-            <label htmlFor='yourName'>Your Name</label>
-            <input
-              id='yourName'
-              type='text'
-              name='yourName'
-              value={data.yourName}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+          <div className={styles.sections}>
+            {/* div 1 */}
+            <div className={styles.field}>
+              <label htmlFor='yourName'>Your Name</label>
+              <input
+                id='yourName'
+                type='text'
+                name='yourName'
+                value={data.yourName}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='yourNumber'>Your PhoneNo</label>
-            <input
-              id='yourNumber'
-              type='number'
-              name='yourNumber'
-              value={data.yourNumber}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+              <label htmlFor='yourNumber'>Your PhoneNo</label>
+              <input
+                id='yourNumber'
+                type='number'
+                name='yourNumber'
+                value={data.yourNumber}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='yourEmail'>Your Email</label>
-            <input
-              id='yourEmail'
-              type='email'
-              name='yourEmail'
-              value={data.yourEmail}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+              <label htmlFor='yourEmail'>Your Email</label>
+              <input
+                id='yourEmail'
+                type='email'
+                name='yourEmail'
+                value={data.yourEmail}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='bankName'>Bank Name</label>
-            <input
-              id='bankName'
-              type='text'
-              name='bankName'
-              value={data.bankName}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+              <label htmlFor='bankName'>Bank Name</label>
+              <input
+                id='bankName'
+                type='text'
+                name='bankName'
+                value={data.bankName}
+                onChange={onChangeHandler}
+              />
+            </div>
+            <div className={styles.field}>
+              <label htmlFor='accountType'>Account Type</label>
+              <input
+                id='accountType'
+                type='text'
+                name='accountType'
+                value={data.accountType}
+                onChange={onChangeHandler}
+              />
+              <label htmlFor='accountNumber'>Account Number</label>
+              <input
+                id='accountNumber'
+                type='text'
+                name='accountNumber'
+                value={data.accountNumber}
+                onChange={onChangeHandler}
+              />
+              <label htmlFor='bankIfsc'>Bank IFSC Code</label>
+              <input
+                id='bankIfsc'
+                type='text'
+                name='bankIfsc'
+                value={data.bankIfsc}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='accountType'>Account Type</label>
-            <input
-              id='accountType'
-              type='text'
-              name='accountType'
-              value={data.accountType}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+              <label htmlFor='invoiceCreated'>Invoice Created</label>
+              <input
+                id='invoiceCreated'
+                type='text'
+                name='invoiceCreated'
+                value={data.invoiceCreated}
+                onChange={onChangeHandler}
+              />
+            </div>
+            <div className={styles.field}>
+              <label htmlFor='invoiceDue'>Invoice Due</label>
+              <input
+                id='invoiceDue'
+                type='text'
+                name='invoiceDue'
+                value={data.invoiceDue}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='accountNumber'>Account Number</label>
-            <input
-              id='accountNumber'
-              type='text'
-              name='accountNumber'
-              value={data.accountNumber}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+              <label htmlFor='companyName'>Company Name</label>
+              <input
+                id='companyName'
+                type='text'
+                name='companyName'
+                value={data.companyName}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='bankIfsc'>Bank IFSC Code</label>
-            <input
-              id='bankIfsc'
-              type='text'
-              name='bankIfsc'
-              value={data.bankIfsc}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
+              <label htmlFor='customerName'>Customer Name</label>
+              <input
+                id='customerName'
+                type='text'
+                name='customerName'
+                value={data.customerName}
+                onChange={onChangeHandler}
+              />
 
-            <label htmlFor='invoiceCreated'>Invoice Created</label>
-            <input
-              id='invoiceCreated'
-              type='text'
-              name='invoiceCreated'
-              value={data.invoiceCreated}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
-
-            <label htmlFor='invoiceDue'>Invoice Due</label>
-            <input
-              id='invoiceDue'
-              type='text'
-              name='invoiceDue'
-              value={data.invoiceDue}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
-
-            <label htmlFor='companyName'>Company Name</label>
-            <input
-              id='companyName'
-              type='text'
-              name='companyName'
-              value={data.companyName}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
-
-            <label htmlFor='customerName'>Customer Name</label>
-            <input
-              id='customerName'
-              type='text'
-              name='customerName'
-              value={data.customerName}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
-
-            <label htmlFor='companyEmail'>Company Email</label>
-            <input
-              id='companyEmail'
-              type='email'
-              name='companyEmail'
-              value={data.companyEmail}
-              onChange={onChangeHandler}
-              className={styles.inputElement}
-            />
-
+              <label htmlFor='companyEmail'>Company Email</label>
+              <input
+                id='companyEmail'
+                type='email'
+                name='companyEmail'
+                value={data.companyEmail}
+                onChange={onChangeHandler}
+              />
+              {/* Form ended */}
+            </div>
+          </div>
+          <div>
+            {/* div 2 */}
             {/* Items section */}
-            <br /><br />
             <h2>Items</h2>
-            <button onClick={addNewFields} className={styles.button1}>Add New Item</button>
             <div className={styles.flexibox}>
-            {
-              task.map((val, i) =>
-                <div className={styles.flexiboxchild}>
-                  <input type='text' name="fname" value={val.fname} onChange={(e) => handleChange(e, i)} className={styles.inputElementTask}/>
-                  <input type='number' name="lname" value={val.lname} onChange={(e) => handleChange(e, i)} className={styles.inputElementTask}/>
-                  <button onClick={(e) => handleDelete(e, i)} className={styles.deleteButton}>Delete</button>
-                </div>
-              )
-            }
+              {
+                task.map((val, i) =>
+                  <div className={styles.flexiboxchild} key={i}>
+                    <input placeholder='Item' type='text' name="fname" value={val.fname} onChange={(e) => handleChange(e, i)} className={styles.inputElementTask} />
+                    <input type='number' name="lname" value={val.lname} onChange={(e) => handleChange(e, i)} className={styles.inputElementTask} />
+                    <button onClick={(e) => handleDelete(e, i)} className={styles.deleteButton}>Delete</button>
+                  </div>
+                )
+              }
             </div>
 
             {/* {items section ends} */}
-            {/* Form ended */}
           </div>
-
-          <button onClick={generateInvoice} className={styles.button}>Download Invoice</button>
+          <div className={styles.actionbuttons}>
+            {/* div 3 */}
+            <button onClick={addNewFields} className={styles.button}>Add New Item</button>
+            <button onClick={generateInvoice} className={styles.button}>Download Invoice</button>
+          </div>
         </form>
       </main>
-    </div>
+    </>
   );
 }
